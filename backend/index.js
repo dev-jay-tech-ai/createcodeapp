@@ -30,6 +30,6 @@ app.post('/api/translate',(req,res) => {
   });
 });
 
-app.listen(3000, function () {
-  console.log('http://localhost:3000/api/translate app listening on port 3000!');
+app.listen(process.env.PORT || 8080, function () {
+  console.log(`Server is Running on ${process.env.PORT || 8080}`);
 });
