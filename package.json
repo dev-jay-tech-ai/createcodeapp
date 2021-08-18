@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/index.js"
+    "start": "nodemon --watch backend --exec babel-node backend/index.js",
+    "build": "del -rf dest && babel backend -d dist",
+    "serve": "node dist/index.js",
+    "heroku-prebuild": "cd frontend && npm install --dev",
+    "heroku-postbuild": "npm run build && cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "Jaewon Kim",
@@ -22,5 +26,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "v14.15.4",
+    "npm": "^6.14.10"
   }
 }
