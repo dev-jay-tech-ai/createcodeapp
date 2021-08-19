@@ -1,7 +1,12 @@
+# dependencies
 dist
 /dist
 node_modules
+/node_modules
+
+frontend/node_modules/**
+frontend/build/**
 package-lock.json
+yarn-lock.json
+frontend/package-lock.json
 frontend/main.js
-frontend/node_modules
-frontend/package-lock.json.env
