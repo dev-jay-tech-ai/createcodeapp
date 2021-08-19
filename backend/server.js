@@ -9,6 +9,7 @@ const client_secret = 'rlCXisFeXP';
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '/../frontend')));
 app.post('/api/translate',(req,res) => {
   const api_url = 'https://openapi.naver.com/v1/papago/n2mt';
   const request = require('request');
