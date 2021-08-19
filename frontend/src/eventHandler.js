@@ -83,12 +83,13 @@ export const submitEventHandler = async (e) => {
   };
   console.log(returnArr);
   const tbody = document.querySelector('.form-container tbody');
-  const tr = document.createElement('tr');
-  const td = document.createElement('td');
   returnArr.map(r => {
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
     tr.appendChild(td); 
     td.innerHTML = r; 
-    return tbody.appendChild(tr);
-  })
+    tbody.appendChild(tr);
+    return tbody;
+  })  
 }
 
