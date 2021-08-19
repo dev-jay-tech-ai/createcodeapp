@@ -59,6 +59,7 @@ export const submitEventHandler = async (e) => {
     let transColor = transName.replace(/ /g,"").split("%")[1];
     let size = data.size;
     let price = data.price;
+
     let first = init(name);
     let second = char(transName);
     let third = transColor.toUpperCase();
