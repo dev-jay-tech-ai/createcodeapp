@@ -114,6 +114,10 @@ const abbr = (el) => {
     return name.replace('CAROLINA HERRERA','CAROLINAHERRERA')
   } else if (name.includes('VIVIENNE WESTWOOD ')) {
     return name.replace('VIVIENNE WESTWOOD ','VIVIENNEWESTWOOD')  
+  } else if (name.includes('CHRISTIAN RUBUTIN ')) {
+    return name.replace('CHRISTIAN RUBUTIN ','CHRISTIANRUBUTIN')  
+  } else if (name.includes('CHRISTIAN RUBOUTIN ')) {
+    return name.replace('CHRISTIAN RUBOUTIN ','CHRISTIANRUBOUTIN')  
   } else {
     return name
   }  
