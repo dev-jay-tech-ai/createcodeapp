@@ -50,7 +50,6 @@ export const submitEventHandler = async (e) => {
       istr[i].remove();
     }
   }
-  //console.log(dataArray); 동기적
   let returnArr = new Array();
   for (let data of dataArray) {
     let name = data.name;
@@ -62,13 +61,11 @@ export const submitEventHandler = async (e) => {
     let transColor = transName.replace(/ /g,"").split("%")[1];
     let size = data.size;
     let price = data.price;
-
     let first = init(name);
     let second = char(transName);
     let third = transColor.toUpperCase();
     let thirdOrg = third.substr(0,2);
     let forth = initSize(size);
-
     if(forth ==='XXS'|| forth ==='XS'|| forth ==='S'|| forth ==='M'|| forth ==='L'|| forth ==='XL' || forth ==='XXL') {
       forth = forth;
     } else if(forth === ""|| forth === 0) {
@@ -77,11 +74,9 @@ export const submitEventHandler = async (e) => {
       forth = "S" + forth;
     }
     let code = first + second + thirdOrg + price + forth;
-    console.log(code);
     returnArr.push(code)
     }
   };
-  console.log(returnArr);
   const tbody = document.querySelector('.form-container tbody');
   returnArr.map(r => {
     const tr = document.createElement('tr');
