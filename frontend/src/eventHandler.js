@@ -52,7 +52,8 @@ export const submitEventHandler = async (e) => {
   }
   dataArray.forEach(async(data) => {
     let name = data.name;
-    let nameOrg = name.split(" /")[0];
+    let namermbr = name.split(" ")[1];
+    let nameOrg = namermbr.split(" /")[0];
     let color = data.color;
     let transName = await translate(nameOrg +'%'+ color);
     let transColor = transName.split("% ")[1];
