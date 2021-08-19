@@ -52,14 +52,13 @@ export const submitEventHandler = async (e) => {
   }
   dataArray.forEach(async(data) => {
     let name = data.name;
-    let namermbr = name.split(" ")[1];
+    let namermbr = name.split(" ")[1]+name.split(" ")[2];
     let nameOrg = namermbr.split(" /")[0];
     let color = data.color;
-    let transName = await translate(nameOrg +'%'+ color);
-    let transColor = transName.split("% ")[1];
+    let transName = await translate(nameOrg+'%'+color);
+    let transColor = transName.replace(/ /g,"").split("%")[1];
     let size = data.size;
     let price = data.price;
-
     let first = init(name);
     let second = char(transName);
     let third = transColor.toUpperCase();

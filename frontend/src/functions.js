@@ -88,49 +88,11 @@ export const initSize = (size) => {
   } else return size;  
 }
 
-const nochar = (name) => {
-  const pattern = /[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\ '\"\\(\=]/gi;                                        
-  let text = name.replace(pattern,'')
-  return text.trim().toUpperCase();
-}
-
-const abbr = (el) => {
-  let name = el.toUpperCase();
-  if (name.includes('BOTTEGA VENETA')) {
-    return name.replace('BOTTEGA VENETA','BOTTEGAVENETA')
-  } else if (name.includes('ROGER BIBIER')) {
-    return name.replace('ROGER BIBIER','ROGERVIVIER')
-  } else if (name.includes('SAINT LAURENT')) {
-    return name.replace('SAINT LAURENT','SAINTLAURENT')
-  } else if (name.includes('MIU MIU')) {
-    return name.replace('MIU MIU','MIUMIU')
-  } else if (name.includes('TOM BROWN')) {
-    return name.replace('TOM BROWN','TOMBROWN')
-  } else if (name.includes('MAX MARA')) {
-    return name.replace('MAX MARA','MAXMARA')
-  } else if (name.includes('ALEXANDER MCQUEEN')) {
-    return name.replace('ALEXANDER MCQUEEN','ALEXANDERMCQUEEN')
-  } else if (name.includes('CAROLINA HERRERA ')) {
-    return name.replace('CAROLINA HERRERA','CAROLINAHERRERA')
-  } else if (name.includes('VIVIENNE WESTWOOD ')) {
-    return name.replace('VIVIENNE WESTWOOD ','VIVIENNEWESTWOOD')  
-  } else if (name.includes('CHRISTIAN RUBUTIN ')) {
-    return name.replace('CHRISTIAN RUBUTIN ','CHRISTIANRUBUTIN')  
-  } else if (name.includes('CHRISTIAN RUBOUTIN ')) {
-    return name.replace('CHRISTIAN RUBOUTIN ','CHRISTIANRUBOUTIN')  
-  } else {
-    return name
-  }  
-}
-
 export const char = (el) => {
-  let name = abbr(el);
-  let nameOrg = name.split(' ')[1] 
-  if (nameOrg.length < 4) {
-    nameOrg = name.split(' ')[1] + name.split(' ')[2]
-    return nochar(nameOrg.substr(0,4));
-  } 
-  return nochar(nameOrg.substr(0,4));
+  const pattern = /[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\ '\"\\(\=]/gi;
+  let name = el.toUpperCase();
+  let text = name.replace(pattern,'').trim() 
+  return text.substr(0,4);
 } 
 
 

@@ -35,6 +35,6 @@ app.post('/api/translate',(req,res) => {
   });
 });
 
-app.listen(process.env.PORT || 5000, function () {
-  console.log(`Server is Running on ${process.env.PORT || 5000}`);
+app.listen(process.env.PORT || 3000, function () {
+  console.log(`Server is Running on ${process.env.PORT || 3000}`);
 });
