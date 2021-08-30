@@ -1,5 +1,13 @@
 import { init, initSize, char} from './functions.js'
 import { translate } from './api.js'
+
+const showLoading = () => {
+  document.getElementById('loading-overlay').classList.add('active');
+}
+const hideLoading = () => {
+    document.getElementById('loading-overlay').classList.remove('active');
+}
+
 export const clickEventHandler = (e) => {
   e.preventDefault();
   const rowAmmount = 1;
@@ -21,6 +29,7 @@ export const clickEventHandler = (e) => {
 
 export const submitEventHandler = async (e) => {
   e.preventDefault();
+  showLoading();
   const dataArray = new Array();
   const data = {
     name: document.getElementById('name').value?document.getElementById('name').value:'',
@@ -60,7 +69,7 @@ export const submitEventHandler = async (e) => {
     let transName = await translate(nameOrg+'%'+color);
     let transColor = transName.replace(/ /g,"").split("%")[1];
     let size = data.size;
-    let price = data.price;
+    let price = data.price.replace("£","");
     let first = init(name);
     let second = char(transName);
     let third = transColor.toUpperCase();
@@ -86,5 +95,6 @@ export const submitEventHandler = async (e) => {
     tbody.appendChild(tr);
     return tbody;
   })  
+  hideLoading();
 }
 

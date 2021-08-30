@@ -7,20 +7,11 @@ const main = document.getElementById('main-container');
 };
 window.addEventListener('load', router);
 
-const showLoading = () => {
-  document.getElementById('loading-overlay').classList.add('active');
-}
-const hideLoading = () => {
-    document.getElementById('loading-overlay').classList.remove('active');
-}
-
 const screen = {
   after_render: () => {
-    showLoading();
     document.getElementById('add').addEventListener('click', clickEventHandler);
     document.getElementById('submit-form').addEventListener('submit', submitEventHandler);
-    hideLoading();
-    
+
     $('input').bind('paste', function (e) {
       var $start = $(this);
       var source
