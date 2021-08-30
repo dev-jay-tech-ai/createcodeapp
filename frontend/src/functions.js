@@ -73,7 +73,11 @@ export const init = (name) => {
     return 'BO';
   } else if (name.includes('크리스찬 루부탱')) {
     return 'CHR';
-  } 
+  } else if (name.includes('끌로에')) {
+    return 'CL';
+  } else {
+    return 'NoBrand'
+  }
 }
 
 export const initSize = (size) => {
