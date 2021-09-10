@@ -75,6 +75,8 @@ export const init = (name) => {
     return 'CHR';
   } else if (name.includes('끌로에')) {
     return 'CL';
+  } else if (name.includes('질센더')) {
+    return 'JSD';  
   } else {
     return 'NoBrand'
   }
